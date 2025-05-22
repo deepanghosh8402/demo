@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant User as Browser (User)
+    participant UI as Web Application (Frontend)
+    participant Server as Backend Server
+
+    User->>UI: Click Save Button
+    UI->>Server: POST /new_note (POST https://studies.cs.helsinki.fi/exampleapp/new_note)
+    Server-->>UI: Respond with all saved notes [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    UI-->>User: Display updated notes list
