@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant User as Browser (User)
+    participant UI as Web Application (SPA)
+    participant Server as Backend Server
+
+    User->>UI: Open Web Page
+    UI->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Server-->>UI: HTML document with saved notes, Add New Notes & dependency css & javacript files
+    UI-->>User: Display existing notes & add new form
+
+UI->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>UI: the css file
+UI->>Server: GET GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server-->>UI:the JavaScript file
+
+  
